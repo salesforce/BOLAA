@@ -1,0 +1,11 @@
+gym
+joblib
+langchain
+numpy
+openai
+python-dotenv
+tenacity
+tiktoken
+pandas<2.0.0
+scikit-learn
+wikipedia

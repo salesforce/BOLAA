@@ -30,7 +30,6 @@ class BaseAgent(object):
         self.item_recall[idx] = []
         
     def llm_layer(self, prompt):
-        # print(prompt)
         return self.llm(prompt)
     
     def get_history(self, session=None):
@@ -44,7 +43,6 @@ class BaseAgent(object):
     
     def save(self, path):
         file_name = os.path.join(path, self.name+'_'+str(self.life_label))
-        print(file_name)
         with open(file_name, 'a') as f:
             f.write(f"session_idx:{self.cur_session}\n")
             history = self.get_history(self.cur_session)
@@ -161,9 +159,7 @@ class ZeroshotThinkAgent(BaseAgent):
         if len(self.actions[self.cur_session]) > 1:
             initial_prompt = f"{zeroshot}{self.observations[self.cur_session][0]}\n\n"
             history = self.get_history()
-            # print("token length:", len(token_enc.encode(initial_prompt)))
             remain_context_space = (self.context_len - len(token_enc.encode(initial_prompt+actions_prompt)))*3
-            # print("remain space:", remain_context_space)
             history = history[-int(remain_context_space):]
             prompt = f"{initial_prompt}{history}{actions_prompt}\n\nAction:"
         return prompt
@@ -171,9 +167,6 @@ class ZeroshotThinkAgent(BaseAgent):
     def forward(self, observation, available_actions=None):
         self.observations[self.cur_session].append(observation)
         prompt = self.prompt_layer(available_actions)
-        print('__________')
-        print("the prompt is:", prompt)
-        print('__________')
         action = self.llm_layer(prompt, temperature=self.temperature, stop=self.stop).lstrip()
         action = self.action_parser(action, available_actions)
         self.actions[self.cur_session].append(action)
