@@ -1,7 +1,7 @@
 # 🛒 WebShop
 
 ## Introduction
-Here in this repo, we contain the minimum code from WebShop for our BOLAA implementation.
+Here in this repo, we contain the minimum code from WebShop for our BOLAA implementation. You can either use this simplified folder to run the environment. Or *Recommend* you can follow [original setup](https://github.com/princeton-nlp/WebShop/tree/master#-setup) to run a **web server** in the background.
 
 ## Installation
 1. Follow the [original setup](https://github.com/princeton-nlp/WebShop/tree/master#-setup) to create the webshop environment.
