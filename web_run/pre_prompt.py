@@ -4,6 +4,7 @@
  SPDX-License-Identifier: Apache License 2.0
  For full license text, see the LICENSE file in the repo root or https://www.apache.org/licenses/LICENSE-2.0
 """
+
 zeroshot = """Following the instruction to simulate the web shopping. Based on your observation, you may operate one of the following actions
 search: using this action to search products.
 click: click observed [button], the clickable buttons are in [], for example click [Back to Search] can return back to research.
