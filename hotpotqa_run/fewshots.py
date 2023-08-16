@@ -1,3 +1,9 @@
+"""
+ Copyright (c) 2023, salesforce.com, inc.
+ All rights reserved.
+ SPDX-License-Identifier: Apache License 2.0
+ For full license text, see the LICENSE file in the repo root or https://www.apache.org/licenses/LICENSE-2.0
+"""
 REACT_EXAMPLE = """Question: Musician and satirist Allie Goertz wrote a song about the "The Simpsons" character Milhouse, who Matt Groening named after who?
 Thought 1: The question simplifies to "The Simpsons" character Milhouse is named after who. I only need to search Milhouse and find who it is named after.
 Action 1: Search[Milhouse]
