@@ -5,7 +5,7 @@ Note this is an initial release (may be a little bit messy) of our repo in respo
 ## Installation
 1. Setup the [fastchat](https://github.com/lm-sys/FastChat) to use local open-source LLMs. Go to next step if you only test openai API.
 2. Setup OPENAI API KEY in both [webrun/config](./web_run/config.py) and [hotpotqa_run/config](./hotpotqa_run/config.py). Skip this if you only test open-source LLMs.  
-2. Setup the [webshop enviroment](./webshop/) if you are testing web agent
+2. Setup the [webshop environment](./webshop/) if you are testing web agent
 3. Setup the agent_benchmarking environment as follows:
 ```
 conda create -n agent_benchmark python=3.10 -y
