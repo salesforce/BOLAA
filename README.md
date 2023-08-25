@@ -1,6 +1,17 @@
-# Introduction
+# BOLAA: Benchmarking and Orchestrating LLM-augmented Autonomous Agents
+
+## News
+- [Aug. 2023] Initial Release of [BOLAA paper](https://arxiv.org/abs/2308.05960) and implementation code! 
+
+## Introduction
 This is the repo for [BOLAA paper](https://arxiv.org/abs/2308.05960). 
-Note this is an initial release (may be a little bit messy) of our repo in response of many requests. We will keep cleaning and updating! 
+In this paper, we create benchmark on LLM-augmented Autonoumous Agents (LAA).
+We compare 6 different LAA architecture, including 5 existing intuitions and 1 new BOLAA agent. 
+And all those agents are paired with different LLMs to compare the performance.
+BOLAA  is able to communicate and orchestrate multiple specialitist agents:
+![BOLAA](./page/BOLAA.jpg)
+We tested on two types of enviroments: the web navigation environment, and HotPotQA enviroment.
+
 
 ## Installation
 1. Setup the [fastchat](https://github.com/lm-sys/FastChat) to use local open-source LLMs. Go to next step if you only test openai API.
@@ -16,13 +27,16 @@ pip install -r requirements.txt
 ```
 python run_webagent.py --agent_name Search_Click_Control_Webrun_Agent --llm_name gpt-3.5-turbo --max_context_len 4000
 ```
-other agent options can be found in [test_webagent.sh](./test_webagent.sh)
+other agent options can be found in [test_webagent.sh](./test_webagent.sh). The implementation code for various web agents is in [web_run](./web_run/agent_arch.py)
+
+![Webshop Reward Table](./page/reward_webshop.jpg)
 
 ## HotpotQA Agent Simulation
 ```
 python run_hotpotqaagent.py --agent_name React_HotPotQA_run_Agent --llm_name gpt-3.5-turbo --max_context_len 4000
 ```
-other agent options commands can be found in [test_hotpotqa.sh](./test_hotpotqa.sh)
+other agent options commands can be found in [test_hotpotqa.sh](./test_hotpotqa.sh). The implementation code for various web agents is in [hotpotqa_run](./hotpotqa_run/agent_arch.py)
+![Hotpot Reward Table](./page/reward_hotpot.jpg)
 
 ## Citation
 If you find our paper or code useful, please cite
