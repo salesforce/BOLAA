@@ -10,8 +10,12 @@ We compare 6 different LAA architecture, including 5 existing intuitions and 1 n
 And all those agents are paired with different LLMs to compare the performance.
 BOLAA  is able to communicate and orchestrate multiple specialitist agents:
 ![BOLAA](./page/BOLAA.jpg)
-We tested on two types of enviroments: the web navigation environment, and HotPotQA enviroment.
+We tested on two types of enviroments: the webshop navigation  environment, and HotPotQA enviroment.
+An example of the BOLAA web agent simulation on webshop enviroment is:
+![BOLAA-webshop](./page/BOLAA-webshop.gif)
 
+Besides BOLAA arch, we also devise five standard LAA arches, the Zeroshot (ZS), Zeroshot-Think (ZST), ReAct, PlanAct, PlanReAct as follows:
+![baseline_agents](./page/baseline_agents.png)
 
 ## Installation
 1. Setup the [fastchat](https://github.com/lm-sys/FastChat) to use local open-source LLMs. Go to next step if you only test openai API.
