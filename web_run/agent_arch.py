@@ -105,11 +105,9 @@ class ZeroshotAgent(BaseAgent):
         self.type = "Zeroshot_Webrun_Agent"
         self.life_label = time.time()
         self.name = f"{self.type}_{self.life_label}"
-        self.temperature = temperature
-        self.stop = stop
    
     def llm_layer(self, prompt):
-        return self.llm(prompt, temperature=self.temperature, stop=self.stop)
+        return self.llm(prompt)
    
     def avai_action_prompt(self, available_actions):
         if 'search' in available_actions:
@@ -148,8 +146,8 @@ class ZeroshotThinkAgent(BaseAgent):
         self.temperature = temperature
         self.stop = stop
   
-    def llm_layer(self, prompt, temperature=0.8, stop=['\n']):
-        return self.llm(prompt, temperature=self.temperature, stop=self.stop)
+    def llm_layer(self, prompt):
+        return self.llm(prompt)
     
     def avai_action_prompt(self, available_actions):
         if 'search' in available_actions:
@@ -195,7 +193,7 @@ class PlannerAgent(BaseAgent):
                              max_tokens=self.max_plan_token_len)
  
     def llm_layer(self, prompt):
-        return self.llm(prompt, temperature=self.temperature, stop=self.stop)
+        return self.llm(prompt)
 
     def prompt_layer(self, available_actions):
         oneshot = pre_prompt.oneshot_plan 
