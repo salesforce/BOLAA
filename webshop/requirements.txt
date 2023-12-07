@@ -11,7 +11,7 @@ pyserini==0.17.0
 pytest
 PyYAML==6.0
 rank_bm25==0.2.2
-requests==2.27.1
+requests==2.31.0
 requests_mock
 rich==12.4.4
 scikit_learn==1.1.1
