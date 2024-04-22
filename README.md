@@ -2,6 +2,7 @@
 
 ## News
 - [APR. 2024] Check new benchmark implementation with [AgentLite](https://github.com/SalesforceAIResearch/AgentLite/tree/main/benchmark).
+- [March 2024] Our paper BOLAA is accepted to [LLMAgent@ICLR workshop](https://llmagents.github.io/)!
 - [Aug. 2023] Initial Release of [BOLAA paper](https://arxiv.org/abs/2308.05960) and implementation code! 
 
 ## Introduction
