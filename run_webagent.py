@@ -60,26 +60,26 @@ def run_one_session(idx, max_steps=50):
     retrieved_items.append(asins)
     inst = get_instruction(observation)
     agent.new_session(idx, inst)
-    
+
     # start planning
     if agent_name in ["PlannerReact_Webrun_Agent", "Planner_Webrun_Agent"]:
         action = 'planning'
         agent.planning()
         agent.stop = ["\n"]
         observation = agent.plan
-    
+
     # start interaction
     for step in range(max_steps):
         actions.append(action)
         observations.append(observation)
         retrieved_items.append(asins)
         if not done:
-            action = agent.forward(observation, env_bottons).lstrip(' ') 
+            action = agent.forward(observation, env_bottons).lstrip(' ')
             # print(observation)
             print(action)
             if "No response" in action: # running too many sessions, end this session
                 done = True
-                # session_save(idx, actions, observations, retrieved_items, saving_path)
+                session_save(idx, actions, observations, retrieved_items, saving_path)
                 return 0.0
             try:
                 observation, reward, done, asins, buttons = env.step(idx, action)
@@ -123,5 +123,3 @@ if os.path.exists(file_name):
     run_episodes(session_list)
 else:
     run_episodes(list(range(0, 900)))
-
-
